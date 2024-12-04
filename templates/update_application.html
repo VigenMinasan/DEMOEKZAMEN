@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование заявки</title>
+</head>
+<body>
+    <h1>Редактировать заявку</h1>
+    <form method="POST">
+        <label for="status" >Статус:</label>
+        <select id="status" name="status" onchange="alert(this.value)" >
+            <option value="Новая заявка" {% if application.status == 'Новая заявка' %}selected{% endif %}>Новая заявка</option>
+            <option value="В процессе ремонта" {% if application.status == 'В процессе ремонта' %}selected{% endif %}>В процессе ремонта</option>
+            <option value="Завершена" {% if application.status == 'Завершена' %}selected{% endif %}>Завершена</option>
+            <option value="Готова к выдаче" {% if application.status == 'Готова к выдаче' %}selected{% endif %}>Готова к выдаче</option>
+            <option value="Ожидание запчастей" {% if application.status == 'Ожидание запчастей' %}selected{% endif %}>Ожидание запчастей</option>
+
+        </select><br><br>
+
+        <label for="description">Описание проблемы:</label>
+        <textarea id="description" name="description">{{ application.description }}</textarea><br><br>
+
+        <label for="responsible">Ответственный:</label>
+        <input type="text" id="responsible" name="responsible" value="{{ application.responsible }}"><br><br>
+
+       
+
+        <input type="submit" value="Сохранить изменения">
+    </form>
+</body>
+</html>

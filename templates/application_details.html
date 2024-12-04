@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Детали заявки</title>
+</head>
+<body>
+    <h1>Детали заявки</h1>
+    <table border="1">
+        <tr><th>Номер заявки</th><td>{{ application.application_number }}</td></tr>
+        <tr><th>Дата добавления</th><td>{{ application.date_added }}</td></tr>
+        <tr><th>Вид оргтехники</th><td>{{ application.org_type }}</td></tr>
+        <tr><th>Модель</th><td>{{ application.model }}</td></tr>
+        <tr><th>Описание</th><td>{{ application.description }}</td></tr>
+        <tr><th>ФИО клиента</th><td>{{ application.client_name }}</td></tr>
+        <tr><th>Номер телефона</th><td>{{ application.phone_number }}</td></tr>
+        <tr><th>Статус</th><td>{{ application.status }}</td></tr>
+        <tr><th>Ответственный</th><td>{{ application.responsible }}</td></tr>
+    </table>
+</body>
+</html>
